@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About this prototype | APL-UW website redesign</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&amp;family=Cormorant+Garamond:wght@500&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+<style>
+.intro-hero { background-color: var(--ocean); background-image: radial-gradient(ellipse 45% 70% at 15% 10%, rgba(255,255,255,0.08), rgba(255,255,255,0) 70%), linear-gradient(180deg, var(--ocean) 0%, var(--ocean-deep) 100%); color: var(--white); }
+.intro-hero .wrap { padding-top: 28px; padding-bottom: 64px; }
+.intro-lockup { display: flex; flex-direction: column; color: var(--white); margin-bottom: 56px; }
+.eyebrow { font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-text); }
+.intro-hero .eyebrow { color: var(--gold); }
+.intro-hero h1 { margin: 10px 0 16px; max-width: 820px; font-size: 46px; line-height: 1.12; font-weight: 600; }
+.lede { margin: 0; max-width: 720px; font-size: 19px; color: var(--cream); }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.btn { display: inline-flex; align-items: center; gap: 12px; min-height: 48px; padding: 0 22px; font-weight: 700; text-decoration: none; }
+.btn-primary { background: var(--gold); color: var(--ocean-ink); }
+.btn-primary:hover { background: #EFE19A; color: var(--ocean-ink); }
+.btn-ghost { border: 1px solid var(--sky); color: var(--sky); font-weight: 600; }
+.btn-ghost:hover { color: var(--white); border-color: var(--white); }
+.btn-ocean { background: var(--ocean); color: var(--white); }
+.btn-ocean:hover { background: var(--ocean-deep); color: var(--white); }
+
+.section { padding: 64px 0; }
+.section + .section { border-top: 1px solid var(--border-light); }
+.section.tint { background: var(--sky-tint); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.section h2 { margin: 8px 0 12px; font-size: 32px; line-height: 1.2; font-weight: 600; color: var(--ocean); }
+.section .sub { margin: 0 0 32px; max-width: 760px; font-size: 18px; color: var(--text-soft); }
+.split { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; }
+.panel { background: var(--white); border: 1px solid var(--border); padding: 24px 24px 20px; }
+.panel h3 { display: flex; align-items: center; gap: 10px; margin: 0 0 12px; font-size: 20px; font-weight: 600; color: var(--ocean); }
+.panel.can { border-top: 4px solid var(--cyan); }
+.panel.cant { border-top: 4px solid var(--gold); }
+.list { margin: 0; padding: 0; list-style: none; }
+.list li { display: flex; gap: 12px; padding: 10px 0; border-top: 1px solid var(--border-light); font-size: 16px; color: var(--text-soft); }
+.list li:first-child { border-top: none; }
+.list svg { flex: 0 0 20px; margin-top: 3px; }
+.list b { color: var(--text); }
+
+.expect { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+.expect-item { display: flex; flex-direction: column; gap: 10px; }
+.sample { height: 120px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--border); font-size: 14px; color: var(--muted); }
+.sample-photo { background: var(--placeholder); align-items: flex-end; justify-content: flex-start; padding: 10px; }
+.sample-photo span { background: var(--white); color: #1B2A38; font-size: 12px; padding: 3px 8px; }
+.sample-copy { background: var(--white); flex-direction: column; align-items: flex-start; justify-content: center; gap: 6px; padding: 16px; }
+.sample-copy b { color: var(--ocean); font-size: 17px; }
+.sample-link { background: var(--white); }
+.sample-link span { color: var(--link); text-decoration: underline; font-weight: 600; }
+.sample-same { background: var(--white); gap: 8px; }
+.sample-same i { font-style: normal; padding: 6px 10px; border: 1px solid var(--border); border-left: 3px solid var(--gold); font-size: 13px; font-weight: 600; color: var(--text); }
+.expect-item h3 { margin: 4px 0 0; font-size: 18px; font-weight: 600; color: var(--ocean); }
+.expect-item p { margin: 0; font-size: 15px; color: var(--text-soft); }
+
+.menu-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin-bottom: 40px; }
+.menu-card { display: flex; flex-direction: column; gap: 8px; padding: 22px 20px; background: var(--ocean); border-left: 4px solid var(--gold); color: var(--white); }
+.menu-card .q { font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gold); }
+.menu-card .name { font-size: 20px; font-weight: 600; }
+.menu-card .what { font-size: 15px; color: var(--cream); }
+.reasons { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 0 40px; }
+.reason { padding: 18px 0; border-top: 1px solid var(--border-light); }
+.reason h3 { margin: 0 0 6px; font-size: 18px; font-weight: 600; color: var(--ocean); }
+.reason p { margin: 0; font-size: 15px; color: var(--text-soft); }
+
+.tours { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; }
+.tour { display: flex; flex-direction: column; gap: 10px; padding: 22px 20px; background: var(--white); border: 1px solid var(--border); border-top: 4px solid var(--cyan); text-decoration: none; color: var(--text); }
+.tour:hover { border-color: var(--cyan); color: var(--text); }
+.tour .who { font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold-text); }
+.tour .title { font-size: 18px; font-weight: 600; color: var(--ocean); }
+.tour ol { margin: 0; padding-left: 20px; font-size: 14px; color: var(--text-soft); }
+.tour ol li { padding: 2px 0; }
+.tour .go { margin-top: auto; padding-top: 6px; display: flex; align-items: center; gap: 10px; font-weight: 700; color: var(--ocean); }
+
+.enter { background: var(--ocean); color: var(--white); }
+.enter .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 24px; padding-top: 52px; padding-bottom: 52px; }
+.enter h2 { margin: 0 0 6px; font-size: 30px; font-weight: 600; }
+.enter p { margin: 0; color: var(--cream); font-size: 17px; max-width: 640px; }
+.intro-foot { padding: 20px 0; font-size: 13px; color: var(--muted); }
+.intro-foot .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+@media (max-width: 600px) { .intro-hero h1 { font-size: 34px; } .section { padding: 48px 0; } .section h2 { font-size: 26px; } }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="intro-hero">
+<div class="wrap">
+<div class="intro-lockup">
+<span class="brand-uw">UNIVERSITY <i>of</i> WASHINGTON</span>
+<span class="brand-name">Applied Physics Laboratory</span>
+</div>
+<span class="eyebrow">Website redesign · Interactive prototype</span>
+<h1>Before you click around: what this prototype is, and how to read it</h1>
+<p class="lede">This is a working sketch of the new APL-UW website. You can move through it like a real site, but it's built to test structure and layout, not to be the finished thing. A few minutes here will make your review more useful.</p>
+<div class="actions">
+<a class="btn btn-primary" href="home.html">Enter the prototype <svg aria-hidden="true" width="26" height="14" viewBox="0 0 26 14" fill="currentColor"><polygon points="0,0 7,7 0,14"/><polygon points="9,0 16,7 9,14"/><polygon points="18,0 25,7 18,14"/></svg></a>
+<a class="btn btn-ghost" href="#main">Read the overview first</a>
+</div>
+</div>
+</header>
+
+<main id="main">
+
+<section class="section" aria-labelledby="what">
+<div class="wrap">
+<span class="eyebrow">The basics</span>
+<h2 id="what">What is an interactive mockup?</h2>
+<p class="sub">It's a set of linked page designs that behave enough like a website for you to try it out. Menus open, links take you to other pages, and the layout adjusts to your screen. Behind the pages there's no content system, database or search engine. It's a model of the site, not the site itself.</p>
+<div class="split">
+<div class="panel can">
+<h3><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 12 10 18 20 6"/></svg>What you can do</h3>
+<ul class="list">
+<li><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 12 10 18 20 6"/></svg><span><b>Use the main menu.</b> Explore research, Work with us, Join us and About each open a menu of where you can go next.</span></li>
+<li><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 12 10 18 20 6"/></svg><span><b>Follow links between pages.</b> Cards, "All …" links, breadcrumbs and the footer go where they would on the real site.</span></li>
+<li><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 12 10 18 20 6"/></svg><span><b>See every kind of page.</b> Landing pages, listings, projects, people, stories, events, datasets and more: 24 pages covering every page type.</span></li>
+<li><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 12 10 18 20 6"/></svg><span><b>Try it on your phone</b>, or narrow your browser window. The menu folds behind a Menu button and the pages rearrange.</span></li>
+<li><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 12 10 18 20 6"/></svg><span><b>Judge the structure.</b> Can you find what you came for? Does each page tell you where to go next?</span></li>
+</ul>
+</div>
+<div class="panel cant">
+<h3><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--gold-text)" stroke-width="2.4" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>What it can't do yet</h3>
+<ul class="list">
+<li><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="var(--gold-text)" stroke-width="2.4" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg><span><b>Search or filter.</b> Search boxes, filters, sorting and page numbers are there to show the layout. They always show the same sample results.</span></li>
+<li><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="var(--gold-text)" stroke-width="2.4" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg><span><b>Send anything.</b> Forms, share buttons and "add to calendar" don't submit or save.</span></li>
+<li><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="var(--gold-text)" stroke-width="2.4" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg><span><b>Show every page.</b> Each page type has one example. All five research themes open the polar theme, and every project opens BICEP.</span></li>
+<li><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="var(--gold-text)" stroke-width="2.4" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg><span><b>Show final content.</b> Photos, much of the writing, names and dates are placeholders. Real text and images come later.</span></li>
+<li><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="var(--gold-text)" stroke-width="2.4" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg><span><b>Open outside documents.</b> Publications, PDFs, videos and news coverage would open other sites. Here those links go nowhere.</span></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section tint" aria-labelledby="expect">
+<div class="wrap">
+<span class="eyebrow">What to expect</span>
+<h2 id="expect">Four things you'll see on almost every page</h2>
+<p class="sub">These are deliberate. They keep the conversation on how the site works rather than on wording or photo choices, which come later.</p>
+<div class="expect">
+<div class="expect-item">
+<div class="sample sample-photo" aria-hidden="true"><span>Photo: researchers deploying instruments at sea</span></div>
+<h3>Grey boxes are photos</h3>
+<p>Each one is labelled with the kind of image that belongs there. Size and placement are part of the design; the picture itself isn't chosen yet.</p>
+</div>
+<div class="expect-item">
+<div class="sample sample-copy" aria-hidden="true"><b>[Job title]</b><span>[One-line description]</span></div>
+<h3>[Brackets] are copy to come</h3>
+<p>Bracketed text marks where real writing goes, and roughly how much. Unbracketed text is working copy: good enough to judge tone and length, but still open to editing.</p>
+</div>
+<div class="expect-item">
+<div class="sample sample-link" aria-hidden="true"><span>Read the publication</span></div>
+<h3>Some links stay put</h3>
+<p>Links to publications, PDFs, videos and outside news don't go anywhere yet. On the live site, job postings open Workday and publications open the publisher's site.</p>
+</div>
+<div class="expect-item">
+<div class="sample sample-same" aria-hidden="true"><i>Sound in the sea</i><i>Polar regions</i></div>
+<h3>One example per template</h3>
+<p>Different links can land on the same sample page. That page stands in for every page of its kind.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section" aria-labelledby="why">
+<div class="wrap">
+<span class="eyebrow">Why it's laid out this way</span>
+<h2 id="why">Built around what people come to do</h2>
+<p class="sub">Much of today's site follows the Lab's own structure, so visitors need to know how APL-UW is organized to find what they need. The new site starts from what someone is trying to do. The main menu has four doors, each answering a question a visitor brings.</p>
+<div class="menu-cards">
+<div class="menu-card"><span class="q">What do you study?</span><span class="name">Explore research</span><span class="what">Five research themes, then projects, publications, reports and data.</span></div>
+<div class="menu-card"><span class="q">Can we work together?</span><span class="name">Work with us</span><span class="what">Sponsored research, facilities and vessels, licensing, data and finding an expert.</span></div>
+<div class="menu-card"><span class="q">Can I work or study here?</span><span class="name">Join us</span><span class="what">Careers, student research, the summer program and fellowships, in one place.</span></div>
+<div class="menu-card"><span class="q">Who are you?</span><span class="name">About</span><span class="what">Leadership, departments, history, news, events and annual reports.</span></div>
+</div>
+<div class="reasons">
+<div class="reason"><h3>Five themes instead of a long list of areas</h3><p>Research is grouped into five plain-language themes, like "Sound in the sea." Each theme opens onto the more specific research areas inside it. A newcomer gets a way in, and specialists can still go straight to the full, filterable list.</p></div>
+<div class="reason"><h3>A story first, then the full list</h3><p>The research landing page explains what APL-UW works on before offering a listing. Browsing everything is one click away for people who already know what they want.</p></div>
+<div class="reason"><h3>One site instead of three</h3><p>The Polar Science Center site and the careers site are folded in. Polar research sits under its theme, and jobs sit with student programs under Join us.</p></div>
+<div class="reason"><h3>People and departments are still easy to reach</h3><p>They aren't in the main menu, but every project, story and theme links to the people and departments behind it. Find an expert is one click from Work with us.</p></div>
+<div class="reason"><h3>Housekeeping moves to the footer</h3><p>News, events, data, annual reports, support, contact, the campus map and the intranet live in the footer, so the top of every page stays focused on the four main paths.</p></div>
+<div class="reason"><h3>A familiar look</h3><p>The design keeps the Lab's ocean blue, gold and UW lockup, with a light, open page body. It aims to be clearer, not trendier.</p></div>
+</div>
+</div>
+</section>
+
+<section class="section tint" aria-labelledby="start">
+<div class="wrap">
+<span class="eyebrow">Places to start</span>
+<h2 id="start">Try a few real tasks</h2>
+<p class="sub">The quickest way to judge the structure is to pick a visitor and try to do what they'd do. Here are four to start with.</p>
+<div class="tours">
+<a class="tour" href="home.html">
+<span class="who">A curious visitor</span><span class="title">Find out what APL-UW does</span>
+<ol><li>Start on the homepage</li><li>Pick a theme under "What we study"</li><li>Open a project from the theme page</li></ol>
+<span class="go">Start on the homepage <svg aria-hidden="true" width="26" height="14" viewBox="0 0 26 14" fill="#0B7FB8"><polygon points="0,0 7,7 0,14"/><polygon points="9,0 16,7 9,14"/><polygon points="18,0 25,7 18,14"/></svg></span>
+</a>
+<a class="tour" href="work-with-us.html">
+<span class="who">A program manager or partner</span><span class="title">Find the right researcher</span>
+<ol><li>Open Work with us</li><li>Go to Find an expert</li><li>Open a staff profile</li></ol>
+<span class="go">Start at Work with us <svg aria-hidden="true" width="26" height="14" viewBox="0 0 26 14" fill="#0B7FB8"><polygon points="0,0 7,7 0,14"/><polygon points="9,0 16,7 9,14"/><polygon points="18,0 25,7 18,14"/></svg></span>
+</a>
+<a class="tour" href="join-us.html">
+<span class="who">A student or job seeker</span><span class="title">Find a way to join</span>
+<ol><li>Open Join us</li><li>Choose "I'm a… Student"</li><li>Open the summer research program</li></ol>
+<span class="go">Start at Join us <svg aria-hidden="true" width="26" height="14" viewBox="0 0 26 14" fill="#0B7FB8"><polygon points="0,0 7,7 0,14"/><polygon points="9,0 16,7 9,14"/><polygon points="18,0 25,7 18,14"/></svg></span>
+</a>
+<a class="tour" href="research.html">
+<span class="who">A fellow scientist</span><span class="title">Find a dataset</span>
+<ol><li>Open Explore research</li><li>Go to Data &amp; resources</li><li>Open a data product</li></ol>
+<span class="go">Start at Explore research <svg aria-hidden="true" width="26" height="14" viewBox="0 0 26 14" fill="#0B7FB8"><polygon points="0,0 7,7 0,14"/><polygon points="9,0 16,7 9,14"/><polygon points="18,0 25,7 18,14"/></svg></span>
+</a>
+</div>
+</div>
+</section>
+
+</main>
+
+<section class="enter" aria-label="Enter the prototype">
+<div class="wrap">
+<div>
+<h2>Ready to look around?</h2>
+<p>You can come back to this page at any time. It lives at the start of the prototype, separate from the site itself.</p>
+</div>
+<a class="btn btn-primary" href="home.html">Enter the prototype <svg aria-hidden="true" width="26" height="14" viewBox="0 0 26 14" fill="currentColor"><polygon points="0,0 7,7 0,14"/><polygon points="9,0 16,7 9,14"/><polygon points="18,0 25,7 18,14"/></svg></a>
+</div>
+</section>
+
+<footer class="intro-foot">
+<div class="wrap"><span>APL-UW website redesign · Interactive prototype</span><span>Designs are a work in progress and will change.</span></div>
+</footer>
+</body>
+</html>
